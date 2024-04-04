@@ -1,4 +1,4 @@
-# Donation App
+# Donation App :palms_up_together:
 
 ## Introduction
 The Java program Food Redistribution and Donation Management system aims to address the social problems of food insecurity and waste.
@@ -67,7 +67,7 @@ Instructions on how to use the app:
 - [Instruction 3]: Description of instruction 3.
 - ...
 
-## Contributors
+## Contributors :handshake:
 
 - [Gunnah Leon](https://github.com/Sir-Leon1)
 - [Nick_Munene](https://github.com/NickM101)
@@ -77,5 +77,5 @@ Instructions on how to use the app:
 - ...
 
 
-## License
+## License :lock:
 This project is licensed under the MIT License. See the [LICENSE.md](LICENSE.md) file for details.
