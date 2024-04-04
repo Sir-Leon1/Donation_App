@@ -68,10 +68,14 @@ Instructions on how to use the app:
 - ...
 
 ## Contributors
-- [Your Name]: Role in the project.
-- [Contributor 2 Name]: Role in the project.
-- [Contributor 3 Name]: Role in the project.
+
+- [Gunnah Leon](https://github.com/Sir-Leon1)
+- [Nick_Munene](https://github.com/NickM101)
+- [Cate-macharia](https://github.com/Cate-macharia)
+- [Kakajoes](https://github.com/Kakajoes)
+- [Elizabeth Nyariki](https://github.com/leeyz4)
 - ...
+
 
 ## License
 This project is licensed under the MIT License. See the [LICENSE.md](LICENSE.md) file for details.
