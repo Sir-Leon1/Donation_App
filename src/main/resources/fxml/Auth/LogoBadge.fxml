@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="700.0" prefWidth="300.0" spacing="10.0" styleClass="auth_logo_container" stylesheets="@../../Styles/Auth.css" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <Label text="Welcome To">
+        <font>
+            <Font name="DejaVu Sans Bold" size="14.0" />
+        </font>
+    </Label>
+    <ImageView fitHeight="150.0" fitWidth="200.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+        <Image url="@../../Images/donation_app.png" />
+    </ImageView>
+    <Label alignment="CENTER" text="DONATION">
+        <font>
+            <Font name="DejaVu Sans Bold" size="24.0" />
+        </font>
+    </Label>
+</VBox>

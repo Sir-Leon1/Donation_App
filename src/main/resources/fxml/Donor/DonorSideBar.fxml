@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.groupwork.donation.Controllers.Donor.DonorController"
+            prefHeight="900.0" prefWidth="300.0">
+    <VBox alignment="TOP_CENTER" layoutX="28.0" layoutY="200.0" prefHeight="800.0" prefWidth="300.0" spacing="15.0"
+          style="-fx-background-color: #FEC802;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+          AnchorPane.topAnchor="0.0">
+        <VBox alignment="CENTER" prefHeight="306.0" prefWidth="300.0">
+            <ImageView cache="true" fitHeight="225.0" fitWidth="294.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@../../Images/avatar.png"/>
+            </ImageView>
+            <Label alignment="CENTER"  fx:id="username_label">
+                <font>
+                    <Font name="DejaVu Sans Bold" size="18.0"/>
+                </font>
+                <VBox.margin>
+                    <Insets top="25.0"/>
+                </VBox.margin>
+            </Label>
+        </VBox>
+        <VBox alignment="CENTER" prefHeight="402.0" prefWidth="300.0" spacing="50.0">
+            <Label text="Make Donation" underline="true">
+                <font>
+                    <Font name="DejaVu Sans Bold" size="24.0"/>
+                </font>
+            </Label>
+            <ComboBox prefHeight="40.0" prefWidth="250.0" fx:id="combo_box"/>
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="246.0" text="Send Donation"
+                    onAction="#handleSendDonation"/>
+        </VBox>
+        <Button alignment="CENTER" mnemonicParsing="false" prefHeight="48.0" prefWidth="274.0"
+                style="-fx-background-color: #FEC802; -fx-border-color: black; -fx-border-radius: 10;" text="Log out" onAction="#handleLogout">
+            <graphic>
+                <FontIcon iconLiteral="fas-sign-out-alt" iconSize="18"/>
+            </graphic>
+        </Button>
+    </VBox>
+</AnchorPane>

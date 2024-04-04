@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+
+
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane prefHeight="900.0" prefWidth="1000.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.groupwork.donation.Controllers.Donor.DonorController">
+    <VBox alignment="CENTER_LEFT" layoutX="50.0" layoutY="31.0" prefHeight="100.0" prefWidth="265.0">
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome">
+            <font>
+                <Font name="DejaVu Sans Bold" size="36.0" />
+            </font>
+        </Text>
+        <Label text="This is what we've got for you today." />
+    </VBox>
+
+    <ScrollPane fx:id="total_donor_scrollable" fitToWidth="true" hbarPolicy="NEVER" layoutX="47.0" layoutY="228.0" prefHeight="720.0" prefWidth="900.0" style="-fx-spacing: 10; -fx-border-color: white; -fx-background-color: white;" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" xmlns:fx="http://javafx.com/fxml">
+        <VBox fx:id="parentVBox" xmlns:fx="http://javafx.com/fxml">
+        </VBox>
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+        </padding>
+    </ScrollPane>
+</AnchorPane>

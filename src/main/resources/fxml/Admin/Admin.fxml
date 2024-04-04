@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="admin_parent" prefHeight="900.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.groupwork.donation.Controllers.Admin.AdminController">
+    <left>
+        <fx:include source="AdminMenu.fxml"/>
+    </left>
+    <center>
+        <fx:include source="OverviewDash.fxml"/>
+    </center>
+</BorderPane>

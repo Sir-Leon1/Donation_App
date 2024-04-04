@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="700.0" prefWidth="700.0" stylesheets="@../../Styles/Auth.css"
+            xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.groupwork.donation.Controllers.Auth.AuthenticationController">
+    <ImageView fitHeight="76.0" fitWidth="96.0" layoutX="153.0" layoutY="66.0" nodeOrientation="INHERIT"
+               pickOnBounds="true" preserveRatio="true">
+        <Image url="@../../Images/donation_app.png"/>
+    </ImageView>
+    <Label alignment="CENTER" layoutX="153.0" layoutY="151.0" text="Welcome Back">
+        <font>
+            <Font name="DejaVu Sans Bold" size="24.0"/>
+        </font>
+    </Label>
+    <Label layoutX="153.0" layoutY="187.0" text="Sign in to continue">
+        <font>
+            <Font name="DejaVu Sans Bold" size="14.0"/>
+        </font>
+    </Label>
+    <HBox alignment="CENTER" layoutX="101.0" layoutY="221.0" prefHeight="40.0" prefWidth="500.0">
+        <Label fx:id="errorLabel" textFill="RED"/>
+    </HBox>
+    <TextField fx:id="email_field" layoutX="150.0" layoutY="274.0" prefHeight="50.0" prefWidth="400.0"
+               promptText="Email Address"/>
+    <PasswordField fx:id="password_field" layoutX="150.0" layoutY="347.0" prefHeight="50.0" prefWidth="400.0"
+                   promptText="Password"/>
+    <Button layoutX="150.0" layoutY="424.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="43.0"
+            prefWidth="401.0" text="Log In">
+        <font>
+            <Font name="DejaVu Sans Bold" size="13.0"/>
+        </font>
+    </Button>
+    <Button layoutX="151.0" layoutY="495.0" mnemonicParsing="false" fx:id="register_choice_button" prefHeight="40.0"
+            prefWidth="400.0" styleClass="register_button" stylesheets="@../../Styles/Auth.css"
+            text="Don't have an account? Sign up"/>
+</AnchorPane>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" styleClass="auth_container" stylesheets="@../../Styles/Auth.css" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.groupwork.donation.Controllers.Auth.AuthenticationController">
+   <FontIcon fx:id="auth_button" iconLiteral="fas-chevron-left" iconSize="24" layoutX="25.0" layoutY="45.0" text="" />
+   <ImageView fitHeight="75.0" fitWidth="95.0" layoutX="102.0" layoutY="58.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+      <Image url="@../../Images/donation_app.png" />
+   </ImageView>
+   <Label alignment="CENTER" layoutX="102.0" layoutY="149.0" text="Registration Preference">
+      <font>
+         <Font name="DejaVu Sans Bold" size="24.0" />
+      </font>
+   </Label>
+   <Label layoutX="102.0" layoutY="190.0" text="Choose your role">
+      <font>
+         <Font name="DejaVu Sans Bold" size="14.0" />
+      </font>
+   </Label>
+   <HBox alignment="CENTER" layoutX="81.0" layoutY="289.0" prefHeight="346.0" prefWidth="538.0" style="-fx-spacing: 30;" AnchorPane.bottomAnchor="65.0">
+      <VBox fx:id="register_donor_button" alignment="CENTER" prefHeight="400.0" prefWidth="270.0" spacing="20.0" style="-fx-border-color: #FEC802; -fx-border-radius: 20; -fx-background-color: white;">
+         <ImageView fitHeight="98.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../../Images/trust.png" />
+            </image>
+         </ImageView>
+         <Label text="Donor">
+            <font>
+               <Font name="DejaVu Sans Bold" size="18.0" />
+            </font>
+         </Label>
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Register as a Donor to contribute to worthy causes." textAlignment="CENTER" wrappingWidth="204.44482421875" />
+      </VBox>
+      <VBox fx:id="register_recipient_button" alignment="CENTER" layoutX="93.0" layoutY="10.0" prefHeight="400.0" prefWidth="270.0" spacing="20.0" style="-fx-border-color: #FEC802; -fx-border-radius: 20; -fx-background-color: white;">
+         <ImageView fitHeight="98.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@../../Images/charity.png" />
+         </ImageView>
+         <Label text="Recipient">
+            <font>
+               <Font name="DejaVu Sans Bold" size="18.0" />
+            </font>
+         </Label>
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Register as a Recipient to receive vital support from our community of generous donors." textAlignment="CENTER" wrappingWidth="204.44482421875" />
+      </VBox>
+   </HBox>
+</AnchorPane>

@@ -1,0 +1,44 @@
+.auth_container {
+    -fx-background-color: #FFFFFF;
+}
+
+.auth_logo_container {
+    -fx-background-color: #FEC802;
+    -fx-alignment: center;
+}
+
+.input_field {
+    -fx-background-radius: 50;
+    -fx-text-fill: #FFFFFF;
+    -fx-prompt-text-fill: #D4CEE3;
+}
+
+.button {
+    -fx-background-color:  #FEC802;
+    -fx-text-fill: #000000;
+}
+
+.button:hover {
+    -fx-cursor: hand;
+}
+
+.register_button {
+    -fx-background-color:  #FFFFFF;
+}
+
+
+/* Register Form Styles */
+.split_panel {
+    -fx-background-color:  #FFFFFF;
+    -fx-border-color: #000000;
+    -fx-border-radius: 20;
+    -fx-cursor: hand;
+}
+
+.choice_panel {
+    -fx-alignment: center;
+}
+
+
+
+/* joe */

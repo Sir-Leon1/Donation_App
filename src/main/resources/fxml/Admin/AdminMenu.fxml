@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.groupwork.donation.Controllers.Admin.AdminMenuController">
+   <VBox layoutX="63.0" layoutY="84.0" prefHeight="750.0" prefWidth="250.0" spacing="15.0" style="-fx-background-color: #FEC802;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <padding>
+         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+      </padding>
+      <VBox alignment="CENTER" prefHeight="306.0" prefWidth="300.0">
+         <ImageView cache="true" fitHeight="152.0" fitWidth="138.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@../../Images/avatar.png" />
+         </ImageView>
+         <Label alignment="CENTER"  fx:id="username_label">
+            <font>
+               <Font name="DejaVu Sans Bold" size="18.0" />
+            </font>
+            <VBox.margin>
+               <Insets top="25.0" />
+            </VBox.margin>
+         </Label>
+      </VBox>
+      <Button fx:id="dashboard_button" alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #FEC802; -fx-border-color: black; -fx-border-radius: 10;" text="Overview" />
+<!--      <Button fx:id="verify_accounts_button" alignment="CENTER" layoutX="10.0" layoutY="160.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #FEC802; -fx-border-radius: 10; -fx-border-color: black;" text="Verify Accounts" />-->
+      <Button fx:id="total_donors_button" alignment="CENTER" layoutX="10.0" layoutY="160.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #FEC802; -fx-border-radius: 10; -fx-border-color: black;" text="Total Donars" />
+      <Button fx:id="total_recipients_button" alignment="CENTER" layoutX="10.0" layoutY="210.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #FEC802; -fx-border-radius: 10; -fx-border-color: black;" text="Total Recipients" />
+      <Button fx:id="total_donations_button" alignment="CENTER" layoutX="10.0" layoutY="260.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #FEC802; -fx-border-radius: 10; -fx-border-color: black;" text="Total Donations" />
+      <VBox prefHeight="115.0" prefWidth="250.0" />
+      <Button alignment="CENTER" mnemonicParsing="false" prefHeight="48.0" prefWidth="274.0" style="-fx-background-color: #FEC802; -fx-border-color: black; -fx-border-radius: 10;" text="Log out" onAction="#handleLogOutUser">
+         <graphic>
+            <FontIcon iconLiteral="fas-sign-out-alt" iconSize="18" />
+         </graphic>
+      </Button>
+   </VBox>
+</AnchorPane>
