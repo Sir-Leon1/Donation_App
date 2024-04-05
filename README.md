@@ -49,8 +49,8 @@ The Java program Food Redistribution and Donation Management system aims to addr
 
 
 ## Technologies Used
-- [Technology 1]: Description of technology 1.
-- [Technology 2]: Description of technology 2.
+- Scene builder : To create the user inger1.
+- [Technology 2: Description of technology 2.
 - [Technology 3]: Description of technology 3.
 - ...
 
