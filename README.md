@@ -49,9 +49,8 @@ The Java program Food Redistribution and Donation Management system aims to addr
 
 
 ## Technologies Used
-- Scene builder : To create the user inger1.
-- [Technology 2: Description of technology 2.
-- [Technology 3]: Description of technology 3.
+- Scene builder : To create the user interface.
+- MySQL : To create a databse.
 - ...
 
 ## Screenshots
@@ -62,9 +61,9 @@ The Java program Food Redistribution and Donation Management system aims to addr
 
 ## Usage
 Instructions on how to use the app:
-- [Instruction 1]: Description of instruction 1.
-- [Instruction 2]: Description of instruction 2.
-- [Instruction 3]: Description of instruction 3.
+- Recipient : Logs in and makes a request to be assisted.
+- Donor : Registers for an account and login to make a donation.
+- Administrator : Added to the system to manage the the donations and requests .
 - ...
 
 ## Contributors :handshake:
