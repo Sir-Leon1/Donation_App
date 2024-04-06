@@ -53,6 +53,9 @@ The Java program Food Redistribution and Donation Management system aims to addr
 - MySQL : To create a databse.
 - ...
 
+## Database setup
+- Currently works on a databse setup with a schema with the table structure as in [Database](Database)
+
 ## Screenshots
 ![Screenshot 1](screenshot1.png)
 ![Screenshot 2](screenshot2.png)
