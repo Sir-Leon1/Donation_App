@@ -6,9 +6,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class DatabaseDriver {
-    private static final String JDBC_URL = "jdbc:mysql://sql11.freesqldatabase.com:3306/sql11693731";
-    private static final String USERNAME = "sql11693731";
-    private static final String PASSWORD = "fzBx8RdtCU";
+    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/donationapp_user_details";
+    private static final String USERNAME = "root";
+    private static final String PASSWORD = "";
     private static Connection connection;
 
     public DatabaseDriver() {
