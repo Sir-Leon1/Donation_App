@@ -11,6 +11,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import org.groupwork.donation.Models.Admin;
+import org.groupwork.donation.Models.Donor;
 import org.groupwork.donation.Models.Model;
 
 import java.io.InputStream;
@@ -41,7 +42,7 @@ public class TotalDonationsController implements Initializable {
         loadingIndicator.setAlignment(CENTER);
         parentVBox.getChildren().add(loadingIndicator);
         new Thread(() -> {
-            List<Map<String, String>> donations = Admin.totalDonations();
+            List<Map<String, String>> donations = Donor.donationsMadeByDonor();
             for (Map<String, String> donation : donations) {
                 // Sample data for demonstration
                 String name = donation.get("Username");

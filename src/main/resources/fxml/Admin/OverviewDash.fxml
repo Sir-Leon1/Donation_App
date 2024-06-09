@@ -9,13 +9,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="900.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.groupwork.donation.Controllers.Admin.DashboardController">
+<AnchorPane prefHeight="900.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.groupwork.donation.Controllers.Admin.DashboardController">
     <children>
         <HBox layoutX="33.0" layoutY="14.0" prefHeight="100.0" prefWidth="934.0">
             <children>
                 <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="265.0">
                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" fx:id="username_label">
+                        <Text fx:id="username_label" strokeType="OUTSIDE" strokeWidth="0.0">
                             <font>
                                 <Font name="DejaVu Sans Bold" size="36.0" />
                             </font>
@@ -29,7 +29,7 @@
             <children>
                 <VBox alignment="CENTER" prefHeight="100.0" prefWidth="250.0">
                     <children>
-                        <Label text="5">
+                        <Label fx:id="total_donors_label" text="5">
                             <font>
                                 <Font name="System Bold" size="36.0" />
                             </font>
@@ -39,7 +39,7 @@
                 </VBox>
                 <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="250.0">
                     <children>
-                        <Label text="3">
+                        <Label fx:id="total_recipients_label" text="3">
                             <font>
                                 <Font name="System Bold" size="36.0" />
                             </font>
@@ -49,7 +49,7 @@
                 </VBox>
                 <VBox alignment="CENTER" layoutX="260.0" layoutY="10.0" prefHeight="100.0" prefWidth="250.0">
                     <children>
-                        <Label text="4">
+                        <Label fx:id="total_donations_label" text="4">
                             <font>
                                 <Font name="System Bold" size="36.0" />
                             </font>
@@ -59,7 +59,7 @@
                 </VBox>
                 <VBox alignment="CENTER" layoutX="510.0" layoutY="10.0" prefHeight="100.0" prefWidth="250.0">
                     <children>
-                        <Label text="2">
+                        <Label fx:id="pending_approval_label" text="2">
                             <font>
                                 <Font name="System Bold" size="36.0" />
                             </font>
@@ -69,7 +69,7 @@
                 </VBox>
                 <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="250.0">
                     <children>
-                        <Label text="3">
+                        <Label fx:id="pending_pick_up_label" text="3">
                             <font>
                                 <Font name="System Bold" size="36.0" />
                             </font>

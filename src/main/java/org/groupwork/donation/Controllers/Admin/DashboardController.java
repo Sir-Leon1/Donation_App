@@ -27,11 +27,25 @@ public class DashboardController implements Initializable {
     public ScrollPane pending_link;
     public VBox parentVBox;
     public Text username_label;
+    public Label total_donors_label;
+    public Label total_recipients_label;
+    public Label pending_approval_label;
+    public Label pending_pick_up_label;
+    public Label total_donations_label;
+
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         String username = Model.getInstance().getUser().getUsername();
-        username_label.setText("Hello");
+        username_label.setText("Hello " + username);
+        total_donations_label.setText(String.valueOf(Donor.rowCount));
+        /*total_donors_label.setText();
+        total_recipients_label.setText();
+        pending_pick_up_label.setText();
+        pending_approval_label.setText();*/
+
         InputStream image = getClass().getResourceAsStream("/Images/donation_app.png");
         assert image != null;
         ImageView loadingImageView = new ImageView(new Image(image));
@@ -105,6 +119,7 @@ public class DashboardController implements Initializable {
     }
 
 
+    //Creates a hbox for linking donors and recipients
     private HBox createVBox(String name, String email, String phoneNumber, String location, ComboBox<String> combo_box) {
         System.out.println(combo_box.getItems());
         HBox hbox = new HBox();

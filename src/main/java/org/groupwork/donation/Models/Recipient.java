@@ -12,8 +12,8 @@ public class Recipient {
     //The method below adds a recipient to the DB on registration. (TDB) To DataBase
     public static void registerRecipient(String email, String username, String password, String location, String usertype, String phoneno, String orgWeb){
 
-        String inAuth = "INSERT INTO Donation_App_UD (Email, Username, Password, Location, UserType, PhoneNo, Org_Website) VALUES (?,?,?,?,?,?,?)";
-        String inRecipient = "INSERT INTO Recipient_UD (email, username, location, usertype, phone, status, requestType) VALUES (?,?,?,?,?,?,?)";
+        String inAuth = "INSERT INTO donation_app_ud (Email, Username, Password, Location, UserType, PhoneNo, Org_Website) VALUES (?,?,?,?,?,?,?)";
+        String inRecipient = "INSERT INTO recipient_ud (email, username, location, usertype, phone, status, requestType) VALUES (?,?,?,?,?,?,?)";
 
         try (Connection connection = Model.getInstance().getDatabaseDriver().connect();
              PreparedStatement preparedStatement = connection.prepareStatement(inAuth)) {
@@ -60,7 +60,7 @@ public class Recipient {
     }
 
     public static void addRequestTDB(String request) {
-        String sql = "UPDATE Recipient_UD SET requestType = ?, status = 'Active' WHERE email = ?";
+        String sql = "UPDATE recipient_ud SET requestType = ?, status = 'Active' WHERE email = ?";
 
         String email = Model.getInstance().getUser().getEmail();
 
@@ -90,7 +90,7 @@ public class Recipient {
     }
 
     public static Map<String, String> recipientsRequests() {
-        String query = "SELECT * FROM Recipient_UD WHERE requestType != ? AND  status = 'Active'";
+        String query = "SELECT * FROM recipient_ud WHERE requestType != ? AND  status = 'Active'";
         Map<String, String> recipients = new LinkedHashMap<>();
 
         try (Connection connection = Model.getInstance().getDatabaseDriver().connect();

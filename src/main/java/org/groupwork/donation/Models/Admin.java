@@ -13,7 +13,7 @@ import static org.groupwork.donation.Models.Donor.donorsArray;
 public class Admin {
 
     public static List<Map<String, String>> recipientsRequests() {
-        String query = "SELECT * FROM Recipient_UD WHERE requestType != ? AND status = 'Active'";
+        String query = "SELECT * FROM recipient_ud WHERE requestType != ? AND status = 'Active'";
         List<Map<String, String>> recipients = new ArrayList<>();
 
         try (Connection connection = Model.getInstance().getDatabaseDriver().connect();
@@ -41,13 +41,13 @@ public class Admin {
     public static void combineData(String donorUsername, String recipientUsername) {
         try (Connection connection = Model.getInstance().getDatabaseDriver().connect()) {
             // Retrieve donor data
-            String donorQuery = "SELECT username, email, donationType FROM Donor_UD WHERE username = ?";
+            String donorQuery = "SELECT username, email, donationType FROM donor_ud WHERE username = ?";
             PreparedStatement donorStatement = connection.prepareStatement(donorQuery);
             donorStatement.setString(1, donorUsername);
             ResultSet donorResultSet = donorStatement.executeQuery();
 
             // Retrieve recipient data
-            String recipientQuery = "SELECT username, email, requestType FROM Recipient_UD WHERE username = ?";
+            String recipientQuery = "SELECT username, email, requestType FROM recipient_ud WHERE username = ?";
             PreparedStatement recipientStatement = connection.prepareStatement(recipientQuery);
             recipientStatement.setString(1, recipientUsername);
             ResultSet recipientResultSet = recipientStatement.executeQuery();
@@ -93,8 +93,8 @@ public class Admin {
     // Method to update donor and recipient status based on combined table
     public static void updateDonorRecipientStatus(String donorUsername, String recipientUsername) {
         String getStatusQuery = "SELECT Status FROM `Assigned_Donors&Recipients` WHERE DonorUsername = ? AND RecipientUsername = ?";
-        String updateDonorStatusQuery = "UPDATE Donor_UD SET status = ? WHERE username = ?";
-        String updateRecipientStatusQuery = "UPDATE Recipient_UD SET status = ? WHERE username = ?";
+        String updateDonorStatusQuery = "UPDATE donor_ud SET status = ? WHERE username = ?";
+        String updateRecipientStatusQuery = "UPDATE recipient_ud SET status = ? WHERE username = ?";
 
 
 
@@ -131,25 +131,4 @@ public class Admin {
         }
     }
 
-
-
-    //Method below creates a list of total donations
-    public static List<Map<String, String>> totalDonations() {
-        String query = "SELECT * FROM Donor_UD WHERE donationType != ?";
-        List<Map<String, String>> donations = new ArrayList<>();
-
-        try (Connection connection = Model.getInstance().getDatabaseDriver().connect();
-             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-            preparedStatement.setString(1, "-");
-
-            try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                Donor.donorsArray(donations, resultSet);
-            }
-        } catch (SQLException e) {
-            System.out.println("Error retrieving donations: " + e.getMessage());
-            e.printStackTrace();
-        }
-
-        return donations;
-    }
 }

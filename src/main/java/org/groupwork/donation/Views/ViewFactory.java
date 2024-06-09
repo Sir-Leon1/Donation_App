@@ -31,7 +31,7 @@ public class ViewFactory {
     public ViewFactory(){
         this.authSelectedScenePane = new SimpleStringProperty("");
         this.adminSelectedMenuItem = new SimpleStringProperty("");
-    };
+    }
 
     public StringProperty getAuthSelectedScenePane(){
         return authSelectedScenePane;

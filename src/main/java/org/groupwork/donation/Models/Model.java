@@ -63,7 +63,7 @@ public class Model {
     }
 
     public void validateUserCredentials(String email, String password) throws SQLException {
-        String query = "SELECT * FROM Donation_App_UD WHERE Email = ? AND Password = ?";
+        String query = "SELECT * FROM donation_app_ud WHERE Email = ? AND Password = ?";
         AuthenticationController auth_controller = new AuthenticationController();
         try (Connection connection = databaseDriver.connect();
              PreparedStatement preparedStatement = connection.prepareStatement(query)) {
@@ -98,33 +98,8 @@ public class Model {
         }
     }
 
-    public void registerNewUser(String email, String username, String password, String location, String userType, String phoneNo, String website) throws SQLException {
-        String insertSQL = "INSERT INTO Donation_App_UD(Email, Username, Password, Location, UserType, PhoneNo, Org_Website) VALUES (?,?,?,?,?,?,?)";
-
-        try (Connection connection = databaseDriver.connect();
-             PreparedStatement preparedStatement = connection.prepareStatement(insertSQL)) {
-
-            preparedStatement.setString(1, email);
-            preparedStatement.setString(2, username);
-            preparedStatement.setString(3, password);
-            preparedStatement.setString(4, location);
-            preparedStatement.setString(5, userType);
-            preparedStatement.setString(6, phoneNo);
-            preparedStatement.setString(7, website);
-            int rowsAffected = preparedStatement.executeUpdate();
-            if (rowsAffected > 0) {
-                Model.getInstance().getViewFactory().showLoginWindow();
-                System.out.println("User registered successfully");
-            }
-        } catch (SQLException e) {
-            System.out.println("Error registering user" + e);
-            throw e; // Rethrow the exception to propagate it to the caller
-        }
-    }
-
-
     public static Map<String, String> getUserDetails(String email) {
-        String query = "SELECT * FROM Donation_App_UD WHERE Email = ?";
+        String query = "SELECT * FROM donation_app_ud WHERE Email = ?";
         Map<String, String> userDetails = new HashMap<>();
 
         try (Connection connection = databaseDriver.connect();
@@ -150,7 +125,7 @@ public class Model {
     }
 
     public static List<Map<String, String>> getUsersByUserType(String userType) {
-        String query = "SELECT * FROM Donation_App_UD WHERE UserType = ?";
+        String query = "SELECT * FROM donation_app_ud WHERE UserType = ?";
         List<Map<String, String>> users = new ArrayList<>();
 
         try (Connection connection = databaseDriver.connect();
@@ -166,22 +141,6 @@ public class Model {
         }
 
         return users;
-    }
-
-    public static List<Map<String, String>> getInactiveVerifiedRecipients() {
-        String query = "SELECT * FROM Donation_App_UD WHERE UserType = 'Recipient' AND Verified = false";
-        List<Map<String, String>> recipients = new ArrayList<>();
-
-        try (Connection connection = databaseDriver.connect();
-             PreparedStatement preparedStatement = connection.prepareStatement(query);
-             ResultSet resultSet = preparedStatement.executeQuery()) {
-            ResponseArray(recipients, resultSet);
-        } catch (SQLException e) {
-            System.out.println("Error retrieving inactive verified recipients: " + e.getMessage());
-            e.printStackTrace();
-        }
-
-        return recipients;
     }
 
     public void LogOutUser (){

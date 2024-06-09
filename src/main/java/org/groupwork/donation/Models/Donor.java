@@ -13,11 +13,13 @@ import java.util.Map;
 
 public class Donor {
 
+    public static int rowCount;
+
     //The method below adds a donor to the DB on registration. (TDB) To DataBase
     public static void registerDonor(String email, String username, String password, String location, String usertype, String phoneno){
 
-        String inAuth = "INSERT INTO Donation_App_UD (Email, Username, Password, Location, UserType, PhoneNo, Org_Website) VALUES (?,?,?,?,?,?,?)";
-        String inDonor = "INSERT INTO Donor_UD (email, username, location, userType, phoneno, status, donationType) VALUES (?,?,?,?,?,?,?)";
+        String inAuth = "INSERT INTO donation_app_ud (Email, Username, Password, Location, UserType, PhoneNo, Org_Website) VALUES (?,?,?,?,?,?,?)";
+        String inDonor = "INSERT INTO donor_ud (email, username, location, userType, phoneno, status, donationType) VALUES (?,?,?,?,?,?,?)";
 
         try (Connection connection = Model.getInstance().getDatabaseDriver().connect();
              PreparedStatement preparedStatement = connection.prepareStatement(inAuth)) {
@@ -65,7 +67,7 @@ public class Donor {
 
     public static void addDonationTDB(String donation)
     {
-        String sql = "UPDATE Donor_UD SET donationType = ?, status = 'Active' WHERE email = ?";
+        String sql = "UPDATE donor_ud SET donationType = ?, status = 'Active' WHERE email = ?";
 
         String email = Model.getInstance().getUser().getEmail();
 
@@ -94,14 +96,14 @@ public class Donor {
 
     //Gets donors who have made donations from DB
     public static List<Map<String, String>> donationsMadeByDonor() {
-        String query = "SELECT * FROM Donor_UD WHERE donationType != ? AND status = 'Active'";
+        String query = "SELECT * FROM donor_ud WHERE donationType != ? AND status = 'Active'";
         List<Map<String, String>> donors = new ArrayList<>();
 
         try (Connection connection = Model.getInstance().getDatabaseDriver().connect();
              PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             preparedStatement.setString(1, "-");
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                donorsArray(donors, resultSet);
+                rowCount = donorsArray(donors, resultSet);
             }
         } catch (SQLException e) {
             System.out.println("Error retrieving donations made: " + e.getMessage());
@@ -112,8 +114,10 @@ public class Donor {
     }
 
     //Creates a hashmap and adds the donor details from the result set
-    public static void donorsArray(List<Map<String, String>> donors, ResultSet resultSet) throws SQLException{
+    public static int donorsArray(List<Map<String, String>> donors, ResultSet resultSet) throws SQLException{
+        int count = 0;
         while (resultSet.next()) {
+            count++;
             Map<String, String> donor = new HashMap<>();
             donor.put("Email", resultSet.getString("Email"));
             donor.put("Username", resultSet.getString("Username"));
@@ -121,6 +125,7 @@ public class Donor {
             donor.put("PhoneNo", resultSet.getString("PhoneNo"));
             donors.add(donor);
         }
+        return count;
     }
 
 
